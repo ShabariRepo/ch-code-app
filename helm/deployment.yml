@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ch-code-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ch-code-app
+  template:
+    metadata:
+      labels:
+        app: ch-code-app
+    spec:
+      containers:
+      - name: ch-code-app
+        image: ch-code-app
+        ports:
+        - containerPort: 8080
