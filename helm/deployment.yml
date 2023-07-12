@@ -23,3 +23,9 @@ spec:
             port: 8080
           initialDelaySeconds: 40
           periodSeconds: 10
+        env:
+        - name: CUSTOM_MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: ch-config
+              key: custom_message
